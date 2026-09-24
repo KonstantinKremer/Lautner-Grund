@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Notare Lautner &amp; Dr. Grund – München</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152436; --navy-2:#1f3550; --gold:#a9853f; --gold-soft:#c9a86a;
+    --cream:#f8f6f0; --paper:#fcfbf7; --ink:#20242b; --line:#d9d2bf;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --paper:#12161c; --cream:#171b22; --ink:#e7e2d6; --line:#333a45; } }
+  :root[data-theme="dark"]{ --paper:#12161c; --cream:#171b22; --ink:#e7e2d6; --line:#333a45; }
+  html{scroll-padding-top:64px; scroll-behavior:smooth;}
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'PT Serif', Georgia, 'Times New Roman', serif; line-height:1.65;}
+  h1,h2,h3{font-family:'Playfair Display', Georgia, serif; font-weight:600; margin:0 0 .4em; color:var(--navy);}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) h1, :root:not([data-theme="light"]) h2, :root:not([data-theme="light"]) h3{color:var(--gold-soft);} }
+  :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3{color:var(--gold-soft);}
+  a{color:var(--navy);}
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px;}
+  header.site{position:sticky; top:0; z-index:10; background:var(--navy); color:#efe8d8; padding-top:env(safe-area-inset-top,0px);}
+  .headbar{display:flex; align-items:center; justify-content:space-between; max-width:1000px; margin:0 auto; padding:14px 24px; flex-wrap:wrap; gap:10px;}
+  .brand{font-family:'Playfair Display',serif; font-size:1.15rem; letter-spacing:.03em;}
+  .brand small{display:block; font-family:'PT Serif',serif; font-size:.68rem; color:var(--gold-soft); letter-spacing:.12em; margin-top:2px;}
+  nav a{color:#efe8d8; text-decoration:none; margin-left:20px; font-size:.92rem; border-bottom:1px solid transparent;}
+  nav a:hover{border-color:var(--gold);}
+  nav{display:flex; flex-wrap:wrap;}
+  .hero{background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%); color:#f3efe2; padding:64px 0 56px; text-align:center;}
+  .hero h1{color:#f7f3e6; font-size:2.1rem; max-width:640px; margin:0 auto .5em;}
+  .hero p{max-width:560px; margin:0 auto; color:#cdd3da; font-size:1.05rem;}
+  .rule{width:64px; height:2px; background:var(--gold); margin:22px auto;}
+  section{padding:56px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .eyebrow{color:var(--gold); font-size:.78rem; letter-spacing:.14em; margin-bottom:6px;}
+  .notare{display:grid; grid-template-columns:1fr 1fr; gap:36px;}
+  @media (max-width:680px){.notare{grid-template-columns:1fr;}}
+  .notar-card h3{margin-bottom:4px;}
+  .notar-card .rolle{color:var(--gold); font-size:.85rem; margin-bottom:14px; font-style:italic;}
+  .notar-card ul{padding-left:18px; margin:0; font-size:.95rem;}
+  .notar-card li{margin-bottom:6px;}
+  .leistungen{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px;}
+  @media (max-width:680px){.leistungen{grid-template-columns:1fr;}}
+  .leistung{background:var(--paper); padding:22px 24px;}
+  .leistung h3{font-size:1.05rem; margin-bottom:6px;}
+  .leistung p{margin:0; font-size:.92rem; color:var(--ink); opacity:.85;}
+  .kosten-box{background:var(--cream); border-left:3px solid var(--gold); padding:20px 24px; margin-top:16px;}
+  .buero{display:grid; grid-template-columns:1.1fr .9fr; gap:40px;}
+  @media (max-width:680px){.buero{grid-template-columns:1fr;}}
+  table.zeiten{width:100%; border-collapse:collapse; font-size:.92rem;}
+  table.zeiten td{padding:6px 0; border-bottom:1px solid var(--line);}
+  table.zeiten td:last-child{text-align:right; color:var(--ink); opacity:.85;}
+  .kontaktzeile{margin:4px 0; font-size:.95rem;}
+  .kontaktzeile b{color:var(--navy);}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .kontaktzeile b{color:var(--gold-soft);}}
+  :root[data-theme="dark"] .kontaktzeile b{color:var(--gold-soft);}
+  form.kontakt{display:grid; gap:12px; margin-top:18px;}
+  form.kontakt input, form.kontakt textarea{font-family:inherit; font-size:.95rem; padding:10px 12px; border:1px solid var(--line); background:var(--paper); color:var(--ink);}
+  form.kontakt button{justify-self:start; background:var(--navy); color:#f3efe2; border:none; padding:10px 24px; font-family:'Playfair Display',serif; letter-spacing:.03em; cursor:pointer;}
+  form.kontakt button:hover{background:var(--navy-2);}
+  footer{background:var(--navy); color:#c7cdd4; padding:28px 0; font-size:.82rem; text-align:center;}
+  footer a{color:#e0dcc9;}
+  :focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="headbar">
+    <div class="brand">Notare Lautner &amp; Dr. Grund<small>MAXIMILIANSPLATZ 12 · MÜNCHEN</small></div>
+    <nav>
+      <a href="#start">Start</a>
+      <a href="#notare">Notare</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#kosten">Kosten</a>
+      <a href="#buero">Büro &amp; Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<section id="start" class="hero">
+  <div class="wrap">
+    <h1>Notarielle Beratung mit Sorgfalt und Erfahrung</h1>
+    <div class="rule"></div>
+    <p>Konrad Lautner und Dr. Thomas Grund führen ein gemeinsames Notariat im Herzen Münchens – für Immobilien, Unternehmen, Erbrecht und Familienrecht.</p>
+  </div>
+</section>
+
+<section id="notare">
+  <div class="wrap">
+    <p class="eyebrow">DIE NOTARE</p>
+    <h2>Konrad Lautner &amp; Dr. Thomas Grund</h2>
+    <div class="notare" style="margin-top:28px;">
+      <div class="notar-card">
+        <h3>Konrad Lautner</h3>
+        <p class="rolle">Notar in München seit 2010</p>
+        <ul>
+          <li>Geboren 1968 in München</li>
+          <li>Studium und Referendariat im Bezirk des OLG München</li>
+          <li>Notarassessor in Prien a. Chiemsee und München</li>
+          <li>2001–2010 Notar in Straubing</li>
+          <li>seit 01.07.2010 Notar in München</li>
+          <li>Beurkundungen in englischer Sprache</li>
+          <li>Online-Beurkundungen im Gesellschaftsrecht</li>
+          <li>Zahlreiche Veröffentlichungen zum Immobilien- und Gesellschaftsrecht</li>
+        </ul>
+      </div>
+      <div class="notar-card">
+        <h3>Dr. Thomas Grund</h3>
+        <p class="rolle">Notar in München seit 2020</p>
+        <ul>
+          <li>Studium der Rechtswissenschaften und BWL, Universität Regensburg</li>
+          <li>Promotion bei Prof. Dr. Ingo Koller zum Aktienrecht</li>
+          <li>Notarassessor in Landshut und am Deutschen Notarinstitut Würzburg</li>
+          <li>2016–2020 Notar in Augsburg</li>
+          <li>seit 01.08.2020 Notar in München, Amtsnachfolger von Notar Dr. Tilman Götte</li>
+          <li>Beurkundungen in englischer Sprache</li>
+          <li>Online-Beurkundungen im Gesellschaftsrecht</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leistungen">
+  <div class="wrap">
+    <p class="eyebrow">LEISTUNGEN</p>
+    <h2>Notarielle Tätigkeitsfelder</h2>
+    <div class="leistungen">
+      <div class="leistung"><h3>Immobilien</h3><p>Kaufverträge, Grundschulden und alle Fragen rund um den Immobilienerwerb.</p></div>
+      <div class="leistung"><h3>Unternehmen</h3><p>Gründung, Umwandlung und Beurkundungen im Gesellschaftsrecht – auch online.</p></div>
+      <div class="leistung"><h3>Vererben</h3><p>Testamente, Erbverträge und die Abwicklung von Nachlässen.</p></div>
+      <div class="leistung"><h3>Schenken</h3><p>Schenkungen und vorweggenommene Erbfolge steuerlich sinnvoll gestalten.</p></div>
+      <div class="leistung"><h3>Familie</h3><p>Eheverträge, Partnerschaften und familienrechtliche Vereinbarungen.</p></div>
+      <div class="leistung"><h3>Notfallvorsorge</h3><p>Vorsorgevollmacht und Patientenverfügung für den Ernstfall.</p></div>
+      <div class="leistung"><h3>Schlichtung</h3><p>Streitvermeidung und Mediation als Alternative zum Rechtsstreit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="kosten">
+  <div class="wrap">
+    <p class="eyebrow">KOSTEN</p>
+    <h2>Notarkosten</h2>
+    <p>Die Gebühren eines Notars sind gesetzlich im Gerichts- und Notarkostengesetz (GNotKG) festgelegt und richten sich nach dem Geschäftswert – unabhängig davon, welcher Notar beauftragt wird.</p>
+    <div class="kosten-box">
+      Auf Wunsch berechnen wir Ihnen die voraussichtlichen Kosten für Ihr Vorhaben im Voraus und erläutern typische Beispielfälle, etwa für einen Immobilienkauf oder eine Unternehmensgründung.
+    </div>
+  </div>
+</section>
+
+<section id="buero">
+  <div class="wrap buero">
+    <div>
+      <p class="eyebrow">BÜRO</p>
+      <h2>Öffnungszeiten</h2>
+      <table class="zeiten">
+        <tr><td>Montag</td><td>8:00–12:00, 14:00–17:00</td></tr>
+        <tr><td>Dienstag</td><td>8:00–12:00, 14:00–17:00</td></tr>
+        <tr><td>Mittwoch</td><td>8:00–12:00, 14:00–17:00</td></tr>
+        <tr><td>Donnerstag</td><td>8:00–12:00, 14:00–17:00</td></tr>
+        <tr><td>Freitag</td><td>8:00–12:00, 14:00–17:00</td></tr>
+      </table>
+    </div>
+    <div>
+      <p class="eyebrow">KONTAKT</p>
+      <h2>Schreiben Sie uns</h2>
+      <p class="kontaktzeile"><b>Adresse:</b> Maximiliansplatz 12, 80333 München</p>
+      <p class="kontaktzeile"><b>Telefon:</b> 089/290 042-0</p>
+      <p class="kontaktzeile"><b>Telefax:</b> 089/290 042-99</p>
+      <p class="kontaktzeile"><b>E-Mail:</b> notare@lautner-grund.de</p>
+      <form class="kontakt" onsubmit="event.preventDefault(); this.querySelector('.ok').style.display='block';">
+        <input type="text" placeholder="Ihr Name" required>
+        <input type="email" placeholder="Ihre E-Mail-Adresse" required>
+        <textarea rows="4" placeholder="Ihr Anliegen"></textarea>
+        <button type="submit">Nachricht senden</button>
+        <p class="ok" style="display:none; color:var(--gold); font-size:.88rem;">Vielen Dank – dies ist ein Platzhalterformular ohne Versandfunktion.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © Notare Konrad Lautner und Dr. Thomas Grund GbR · Maximiliansplatz 12, 80333 München<br>
+    Impressum · Datenschutzerklärung
+  </div>
+</footer>
+
+</body>
+</html>
